@@ -11,8 +11,8 @@ stages:
       - joblib==1.1.0
       - numpy==1.22.3
       - scikit-learn==1.0.2
-    cpu_request: 0.5
-    memory_request_mb: 100
+    cpu_request: 2
+    memory_request_mb: 1000
     service:
       max_startup_time_seconds: 240
       replicas: 2
