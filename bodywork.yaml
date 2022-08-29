@@ -12,9 +12,9 @@ stages:
       - numpy==1.22.3
       - scikit-learn==1.0.2
     cpu_request: 1
-    memory_request_mb: 200
+    memory_request_mb: 1000
     service:
-      max_startup_time_seconds: 240
+      max_startup_time_seconds: 600
       replicas: 2
       port: 5000
       ingress: true
