@@ -26,7 +26,7 @@ import numpy as np
 from flask import Flask, jsonify, make_response, request, Response
 from joblib import load
 from sklearn.base import BaseEstimator
-from gevent import pywsgi
+#from gevent import pywsgi
 
 MODEL_PATH = 'classification_model.joblib'
 CLASS_TO_SPECIES_MAP = {0: 'setosa', 1: 'versicolor', 2: 'virginica'}
@@ -78,6 +78,6 @@ if __name__ == '__main__':
     model = load(MODEL_PATH)
     print(f'loaded model={model}')
     print(f'starting API server')
-    #app.run(host='0.0.0.0', port=5000)
-    server = pywsgi.WSGIServer(('0.0.0.0', 5000), app)
-    server.serve_forever()
+    app.run(host='0.0.0.0', port=5000)
+    #server = pywsgi.WSGIServer(('0.0.0.0', 5000), app)
+    #server.serve_forever()
